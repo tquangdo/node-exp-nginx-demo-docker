@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  ser-demofetchnodeexpnginx:
+    build:
+      context: ./course-service
+      dockerfile: ./Dockerfile
+    container_name: 'con-demofetchnodeexpnginx'
+    volumes:
+      - ./course-service:/usr/src/app
+    ports:
+      - 5001:8080
+
+  ser-website:
+    image: nginx:alpine
+    container_name: 'con-website'
+    volumes:
+      - ./website:/usr/share/nginx/html
+    ports:
+      - 5002:80
+    depends_on: 
+      - ser-demofetchnodeexpnginx

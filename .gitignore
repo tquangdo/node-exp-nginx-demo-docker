@@ -1,0 +1,5 @@
+/course-service/node_modules
+/course-service/package-lock.json
+
+.vscode
+docker-compose.debug.yml

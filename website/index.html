@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <title>DoTQ Docker Compose</title>
+   </head> 
+   <body>
+       <h1>Courses DoTQ!!!</h1>
+       <ul id="coursesContainer"></ul>
+       <script type="text/javascript">
+            var url = 'http://localhost:5001'
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    var cou = data.courses
+                    var couList = ''
+                    cou.forEach(element => {
+                        couList += `<li>${element}</li>`
+                    })
+                    document.getElementById('coursesContainer').innerHTML = couList
+                })
+                .catch(err => console.log(err))
+        </script>
+   </body>
+</html>

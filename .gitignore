@@ -1,4 +1,4 @@
-/course-service/node_modules
+*node_modules*
 /course-service/package-lock.json
 
 .vscode
